@@ -93,7 +93,7 @@ class OrderBook:
 
 
 SYMBOL = "tBTCUSD"
-SECONDS_RECORDING_DURATION = 3300
+SECONDS_RECORDING_DURATION = 7200
 order_book = OrderBook()
 
 bfx = Client()
