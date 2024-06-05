@@ -163,9 +163,9 @@ async def on_t_book_update(subscription: Book, data: TradingPairBook, timestamp:
 
 def save_orderbook_messages_to_file(timestamp: int, is_interrupted: bool = False):
     path = (
-        f"data/data_{timestamp}_interrupted.json"
+        f"data_{SYMBOL}/data_{timestamp}_interrupted.json"
         if is_interrupted
-        else f"data/data_{timestamp}.json"
+        else f"data_{SYMBOL}/data_{timestamp}.json"
     )
 
     with open(path, "w") as json_file:
@@ -216,7 +216,7 @@ async def _reset_connection(subscription):
 
 if __name__ == "__main__":
     # create a data folder if it does not exists
-    if not os.path.exists("data"):
-        os.makedirs("data")
+    if not os.path.exists(f"data_{SYMBOL}"):
+        os.makedirs(f"data_{SYMBOL}")
 
     bfx.wss.run()
