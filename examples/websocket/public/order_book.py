@@ -1,6 +1,7 @@
 # python -c "import examples.websocket.public.order_book"
 
 import json
+import os
 import zlib
 from collections import OrderedDict
 from copy import deepcopy
@@ -214,4 +215,8 @@ async def _reset_connection(subscription):
 
 
 if __name__ == "__main__":
+    # create a data folder if it does not exists
+    if not os.path.exists("data"):
+        os.makedirs("data")
+
     bfx.wss.run()
