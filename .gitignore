@@ -11,4 +11,4 @@ venv
 !.gitkeep
 MANIFEST
 
-data/
+data*/
