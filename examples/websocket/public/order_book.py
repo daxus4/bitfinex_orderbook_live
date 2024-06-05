@@ -1,12 +1,12 @@
 # python -c "import examples.websocket.public.order_book"
 
+import json
 import zlib
 from collections import OrderedDict
+from copy import deepcopy
 from decimal import Decimal
 from math import floor, log10
 from typing import Any, Dict, List, cast
-import json
-from copy import deepcopy
 
 from bfxapi import Client
 from bfxapi.types import TradingPairBook
@@ -92,7 +92,7 @@ class OrderBook:
         self.__order_book = {"bids": OrderedDict(), "asks": OrderedDict()}
 
 
-SYMBOL = "tBTCUSD"
+SYMBOL = "tSOLUSD"
 SECONDS_RECORDING_DURATION = 7200
 order_book = OrderBook()
 
